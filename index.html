@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <header class="header">
+
+        <h1>Student Portal</h1>
+
+        <nav class="navbar">
+            <a href="#" onclick="showContent('home')">Home</a>
+            <a href="#" onclick="showContent('courses')">Courses</a>
+            <a href="#" onclick="showContent('contact')">Contact</a>
+        </nav>
+
+    </header>
+
+    <aside class="sidebar">
+
+        <h2>Sidebar</h2>
+
+        <p onclick="showContent('dashboard')">Dashboard</p>
+        <p onclick="showContent('schedule')">Schedule</p>
+        <p onclick="showContent('grades')">Grades</p>
+
+    </aside>
+
+    <main class="main">
+
+        <h1 id="title">Main Content</h1>
+
+        <section class="card-grid" id="content">
+
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">JavaScript</div>
+            <div class="card">Responsive Design</div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        Footer
+    </footer>
+
+</div>
+
+<script>
+
+function showContent(section) {
+
+    const title = document.getElementById("title");
+    const content = document.getElementById("content");
+
+    if(section === "home") {
+
+        title.innerHTML = "Home";
+
+        content.innerHTML = `
+            <div class="card">Welcome</div>
+            <div class="card">Student Portal</div>
+        `;
+    }
+
+    else if(section === "courses") {
+
+        title.innerHTML = "Courses";
+
+        content.innerHTML = `
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">JavaScript</div>
+            <div class="card">Responsive Design</div>
+        `;
+    }
+
+    else if(section === "contact") {
+
+        title.innerHTML = "Contact";
+
+        content.innerHTML = `
+            <div class="card">Email: student@gmail.com</div>
+            <div class="card">Phone: 09123456789</div>
+        `;
+    }
+
+    else if(section === "dashboard") {
+
+        title.innerHTML = "Dashboard";
+
+        content.innerHTML = `
+            <div class="card">Profile</div>
+            <div class="card">Notifications</div>
+        `;
+    }
+
+    else if(section === "schedule") {
+
+        title.innerHTML = "Schedule";
+
+        content.innerHTML = `
+            <div class="card">Math - 8AM</div>
+            <div class="card">Science - 10AM</div>
+        `;
+    }
+
+    else if(section === "grades") {
+
+        title.innerHTML = "Grades";
+
+        content.innerHTML = `
+            <div class="card">HTML - 95</div>
+            <div class="card">CSS - 93</div>
+        `;
+    }
+
+}
+
+</script>
+
+</body>
+</html>
